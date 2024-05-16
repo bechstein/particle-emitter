@@ -4,6 +4,9 @@
 
 A particle system library for the [PixiJS](https://github.com/pixijs/pixi.js) library. Also, we created an [interactive particle editor](http://pixijs.github.io/pixi-particles-editor/) to design and preview custom particle emitters which utilitze PixiJS Particle Emitter. Note that the editor was built for an older version of the library - to use its output you'll have to use the [`upgradeConfig()`](https://pixijs.github.io/particle-emitter/docs/modules.html#upgradeConfig) function.
 
+## Minor changes changes in v6.0.1
+
+
 ## Breaking changes in v6 from v5
 
 * `pixi.js` updated to v8

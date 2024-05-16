@@ -139,14 +139,14 @@ export class PathBehavior implements IEmitterBehavior
     /**
      * The function representing the path the particle should take.
      */
-    private path: (x: number, y: number) => number;
+    private path: (x: number, y: number, agePercent: number, maxLife: number, random?: number) => number;
     private list: PropertyList<number>;
     private minMult: number;
     constructor(config: {
         /**
          * Algebraic expression describing the movement of the particle.
          */
-        path: string | ((x: number, y: number) => number);
+        path: string | ((x: number, y: number,  agePercent: number, maxLife: number) => number);
         /**
          * Speed of the particles in world units/second. This affects the x value in the path.
          * Unlike normal speed movement, this can have negative values.
@@ -231,11 +231,11 @@ export class PathBehavior implements IEmitterBehavior
     {
         // increase linear movement based on speed
         const speed = this.list.interpolate(particle.agePercent) * particle.config.speedMult;
-
+        const random: any = particle.emitter.getBehavior('randomSeed');
         particle.config.movement += speed * deltaSec;
         // set up the helper point for rotation
         helperPoint.x = particle.config.movement;
-        helperPoint.y = this.path(helperPoint.x, helperPoint.y);
+        helperPoint.y = this.path(helperPoint.x, helperPoint.y, particle.agePercent, particle.maxLife, random?.randomSeed);
         rotatePoint(particle.config.initRotation, helperPoint);
         particle.position.x = particle.config.initPosition.x + helperPoint.x;
         particle.position.y = particle.config.initPosition.y + helperPoint.y;

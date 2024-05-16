@@ -6,11 +6,15 @@
   "bundle": "dist/particle-emitter.js",
   "typings": "lib/index.d.ts",
   "description": "Particle emitter for Pixi.js",
-  "author": "Christoph Pelz, based on fork from Andrew Start <start.andrew@gmail.com>",
+  "author": "Andrew Start <start.andrew@gmail.com>",
   "contributors": [
     {
       "name": "Matt Karl",
       "email": "matt@mattkarl.com"
+    },
+    {
+      "name": "C.Bechstein digital",
+      "email": "software@bechstein-digital.com"
     }
   ],
   "scripts": {
@@ -27,9 +31,9 @@
     "docs-live": "gh-pages -d docs",
     "postdocs-live": "git checkout .",
     "version": "npm run build",
-    "publish:patch": "npm version patch && node build/publish.js",
-    "publish:minor": "npm version minor && node build/publish.js",
-    "publish:major": "npm version major && node build/publish.js",
+    "publish:patch": "npm version patch && npm publish",
+    "publish:minor": "npm version minor && npm publish",
+    "publish:major": "npm version major && npm publish",
     "postpublish": "git push && git push --tags && npm run docs-live",
     "test": "echo done"
   },
@@ -58,10 +62,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pixijs/particle-emitter"
+    "url": "https://github.com/bechstein/particle-emitter"
   },
   "bugs": {
-    "url": "https://github.com/pixijs/particle-emitter/issues"
+    "url": "https://github.com/bechstein/particle-emitter/issues"
   },
   "files": [
     "dist/",
@@ -85,5 +89,5 @@
       "test/pixi-v6-module"
     ]
   },
-  "private": true
+  "private": false
 }

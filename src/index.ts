@@ -23,6 +23,7 @@ Emitter.registerBehavior(behaviors.ShapeSpawnBehavior);
 Emitter.registerBehavior(behaviors.SingleTextureBehavior);
 Emitter.registerBehavior(behaviors.SpeedBehavior);
 Emitter.registerBehavior(behaviors.StaticSpeedBehavior);
+Emitter.registerBehavior(behaviors.RandomSeedBehavior);
 
 export * from './Emitter';
 export * from './EmitterConfig';
