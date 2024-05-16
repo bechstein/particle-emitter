@@ -1,12 +1,12 @@
 {
-  "name": "@pixi/particle-emitter",
-  "version": "6.0.0",
+  "name": "@bechstein/particle-emitter",
+  "version": "6.0.1",
   "main": "lib/particle-emitter.js",
   "module": "lib/particle-emitter.es.js",
   "bundle": "dist/particle-emitter.js",
   "typings": "lib/index.d.ts",
   "description": "Particle emitter for Pixi.js",
-  "author": "Andrew Start <start.andrew@gmail.com>",
+  "author": "Christoph Pelz, based on fork from Andrew Start <start.andrew@gmail.com>",
   "contributors": [
     {
       "name": "Matt Karl",

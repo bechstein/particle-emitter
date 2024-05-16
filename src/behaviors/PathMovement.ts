@@ -139,14 +139,14 @@ export class PathBehavior implements IEmitterBehavior
     /**
      * The function representing the path the particle should take.
      */
-    private path: (x: number) => number;
+    private path: (x: number, y: number) => number;
     private list: PropertyList<number>;
     private minMult: number;
     constructor(config: {
         /**
          * Algebraic expression describing the movement of the particle.
          */
-        path: string | ((x: number) => number);
+        path: string | ((x: number, y: number) => number);
         /**
          * Speed of the particles in world units/second. This affects the x value in the path.
          * Unlike normal speed movement, this can have negative values.
@@ -235,7 +235,7 @@ export class PathBehavior implements IEmitterBehavior
         particle.config.movement += speed * deltaSec;
         // set up the helper point for rotation
         helperPoint.x = particle.config.movement;
-        helperPoint.y = this.path(helperPoint.x);
+        helperPoint.y = this.path(helperPoint.x, helperPoint.y);
         rotatePoint(particle.config.initRotation, helperPoint);
         particle.position.x = particle.config.initPosition.x + helperPoint.x;
         particle.position.y = particle.config.initPosition.y + helperPoint.y;
