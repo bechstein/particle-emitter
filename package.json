@@ -1,6 +1,6 @@
 {
   "name": "@bechstein/particle-emitter",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "main": "lib/particle-emitter.js",
   "module": "lib/particle-emitter.es.js",
   "bundle": "dist/particle-emitter.js",
